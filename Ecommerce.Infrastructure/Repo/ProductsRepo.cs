@@ -19,11 +19,11 @@ namespace Ecommerce.Infrastructure.Repo
             this.context = context;
         }
 
-        public async Task<IEnumerable<Products>> GetAllProductsByCategoryId(int Cat_Id) { 
+        public async Task<IEnumerable<Products>> GetAllProductsByCategoryId(int Id) { 
 
 
 var products = await context.Products.Include(x => x.Category)
-.Where(c => c.CategoryId==Cat_Id).
+.Where(c => c.CategoryId==Id).
 ToListAsync();
 return products;
 }
