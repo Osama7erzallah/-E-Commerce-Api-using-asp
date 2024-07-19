@@ -9,7 +9,7 @@ namespace Ecommerce.Core.IRepo
 {
     public interface IProductsRepo: IGenericRepo<Products>
     {
-        public  Task<IEnumerable<Products>> GetAllProductsByCategoryId (int Cat_Id);
+        public  Task<IEnumerable<Products>> GetAllProductsByCategoryId (int Id);
         
 
 

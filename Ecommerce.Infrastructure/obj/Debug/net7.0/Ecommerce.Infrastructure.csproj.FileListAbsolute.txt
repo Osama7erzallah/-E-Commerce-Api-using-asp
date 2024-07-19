@@ -15,3 +15,4 @@ G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\refint\Ecomme
 G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\Ecommerce.Infrastructure.pdb
 G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\Ecommerce.Infrastructure.genruntimeconfig.cache
 G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\ref\Ecommerce.Infrastructure.dll
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\Ecommerce.Infrastructure.sourcelink.json

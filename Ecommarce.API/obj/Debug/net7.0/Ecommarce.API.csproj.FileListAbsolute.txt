@@ -82,3 +82,4 @@ G:\asp\api\Ecommarce.API\Ecommarce.API\bin\Debug\net7.0\AutoMapper.dll
 G:\asp\api\Ecommarce.API\Ecommarce.API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 G:\asp\api\Ecommarce.API\Ecommarce.API\bin\Debug\net7.0\Castle.Core.dll
 G:\asp\api\Ecommarce.API\Ecommarce.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Proxies.dll
+G:\asp\api\Ecommarce.API\Ecommarce.API\obj\Debug\net7.0\Ecommarce.API.sourcelink.json

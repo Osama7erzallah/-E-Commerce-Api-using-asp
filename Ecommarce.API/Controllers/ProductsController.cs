@@ -57,7 +57,8 @@ namespace Ecommarce.API.Controllers
             {
                 apiResponse.StatusCode = System.Net.HttpStatusCode.OK;
                 apiResponse.IsSuccess = check;
-                apiResponse.Result = products;
+                var mapping= mapper.Map<Products, ProductsDTO>(products);
+                apiResponse.Result = mapping;
                 return apiResponse;
             }
             else
@@ -103,23 +104,40 @@ namespace Ecommarce.API.Controllers
 
             await unitOfWork.productsRepo.Create(product);
             await unitOfWork.Save();
-            return Ok(product);
+            return Ok(productsFormDTO);
         }
 
 
         [HttpPut]
-        public async Task<ActionResult> Update(Products product)
+   
+        public async Task<ActionResult> Update(ProductsDTO productsDTO)
         {
-            unitOfWork.productsRepo.Update(product);
-           await unitOfWork.Save();
-            return Ok();
+            var Product = await unitOfWork.productsRepo.GetById(productsDTO.Id);
+            if (Product == null)
+            {
+                return NotFound("Product not found.");
+            }
+
+            var updatedProduct = mapper.Map(productsDTO, Product);
+
+
+            unitOfWork.productsRepo.Update(updatedProduct);
+            await unitOfWork.Save();
+            return Ok(updatedProduct);
         }
+
         [HttpDelete]
         public async Task<ActionResult> Delete(int id)
         {
+            var Product = await unitOfWork.productsRepo.GetById(id);
+            if (Product == null)
+            {
+                return NotFound("Product not found.");
+            }
+
             unitOfWork.productsRepo.Delete(id);
            await  unitOfWork.Save();
-            return Ok();
+            return Ok("The Product Deleted successfully");
         }
     }
 }
