@@ -1,0 +1,17 @@
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\bin\Debug\net7.0\Ecommerce.Infrastructure.deps.json
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\bin\Debug\net7.0\Ecommerce.Infrastructure.runtimeconfig.json
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\bin\Debug\net7.0\Ecommerce.Infrastructure.dll
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\bin\Debug\net7.0\Ecommerce.Infrastructure.pdb
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\bin\Debug\net7.0\Ecommerce.Core.dll
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\bin\Debug\net7.0\Ecommerce.Core.pdb
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\Ecommerce.Infrastructure.csproj.AssemblyReference.cache
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\Ecommerce.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\Ecommerce.Infrastructure.AssemblyInfoInputs.cache
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\Ecommerce.Infrastructure.AssemblyInfo.cs
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\Ecommerce.Infrastructure.csproj.CoreCompileInputs.cache
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\Ecommerce.Infrastructure.csproj.CopyComplete
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\Ecommerce.Infrastructure.dll
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\refint\Ecommerce.Infrastructure.dll
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\Ecommerce.Infrastructure.pdb
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\Ecommerce.Infrastructure.genruntimeconfig.cache
+G:\asp\api\Ecommarce.API\Ecommerce.Infrastructure\obj\Debug\net7.0\ref\Ecommerce.Infrastructure.dll
