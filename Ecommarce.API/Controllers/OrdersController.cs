@@ -7,6 +7,7 @@ using Ecommerce.Core.IRepo;
 using Ecommerce.Infrastructure.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Drawing;
 using System.Net;
 
 namespace Ecommarce.API.Controllers
@@ -28,7 +29,35 @@ namespace Ecommarce.API.Controllers
 
         }
 
+
+        [HttpGet]
+        [ResponseCache(CacheProfileName = "cache100")]
+
+        public async Task<ActionResult<ApiResponse>> GetAll(int P_Size = 10, int P_Number = 1) {
+
+            var orders = await unitOfWork.ordersRepo.GetAll(PSize: P_Size, PNumber: P_Number, InclodeP: null);
+
+            var check = orders.Any();
+            if (check)
+            {
+                apiResponse.StatusCode = System.Net.HttpStatusCode.OK;
+                apiResponse.IsSuccess = check;
+                var mappedOrders = mapper.Map<IEnumerable<Orders>, IEnumerable<OrdersDTO>>(orders);
+                apiResponse.Result = mappedOrders;
+                return apiResponse;
+            }
+            else
+            {
+                apiResponse.StatusCode = System.Net.HttpStatusCode.OK;
+                apiResponse.IsSuccess = check;
+                apiResponse.Error = "Thare is no products";
+                return apiResponse;
+
+            }
+        }
+
         [HttpGet("GetAllByUserId")]
+        [ResponseCache(CacheProfileName = "cache60")]
         public async Task<ActionResult<ApiResponse>> GetAllByUserId(int Id, int P_Size = 10, int P_Number = 1)
         {
             var orders = await unitOfWork.ordersRepo.GetAllByUserId(PSize: P_Size, PNumber: P_Number, id: Id);
@@ -53,31 +82,8 @@ namespace Ecommarce.API.Controllers
             }
         }
 
-        [HttpGet]
-        public async Task<ActionResult<ApiResponse>> GetAll(int P_Size = 10, int P_Number = 1) {
-
-            var orders = await unitOfWork.ordersRepo.GetAll(PSize: P_Size, PNumber: P_Number, InclodeP: null);
-
-            var check = orders.Any();
-            if (check)
-            {
-                apiResponse.StatusCode = System.Net.HttpStatusCode.OK;
-                apiResponse.IsSuccess = check;
-                var mappedOrders = mapper.Map<IEnumerable<Orders>, IEnumerable<OrdersDTO>>(orders);
-                apiResponse.Result = mappedOrders;
-                return apiResponse;
-            }
-            else
-            {
-                apiResponse.StatusCode = System.Net.HttpStatusCode.OK;
-                apiResponse.IsSuccess = check;
-                apiResponse.Error = "Thare is no products";
-                return apiResponse;
-
-            }
-        }
-
         [HttpGet("GetOrderById")]
+        [ResponseCache(CacheProfileName ="cache60")]
         public async Task<ActionResult<ApiResponse>> GetOrderById(int Id)
         {
             var order = await unitOfWork.ordersRepo.GetById(Id);

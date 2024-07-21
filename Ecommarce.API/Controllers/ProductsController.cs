@@ -27,6 +27,7 @@ namespace Ecommarce.API.Controllers
         }
 
         [HttpGet]
+        [ResponseCache(CacheProfileName ="cache100")]
         public async Task<ActionResult<ApiResponse>> GetAllProducts(int P_Size = 10, int P_Number = 1)
         {
             var products =await unitOfWork.productsRepo.GetAll(PSize:P_Size,PNumber:P_Number,InclodeP:"Category");
@@ -49,6 +50,8 @@ namespace Ecommarce.API.Controllers
         }
 
         [HttpGet("GetById")]
+        [ResponseCache(CacheProfileName = "cache60")]
+
         public async Task<ActionResult<ApiResponse>> GetById(int id)
         {
             var products = await unitOfWork. productsRepo.GetById (id);
@@ -73,6 +76,7 @@ namespace Ecommarce.API.Controllers
         }
 
         [HttpGet("GetAllProductsByCategoryId")]
+        [ResponseCache(CacheProfileName = "cache60")]
         public async Task<ActionResult<ApiResponse>> GetAllProductsByCategoryId(int Id )
         {
             var products = await unitOfWork.productsRepo.GetAllProductsByCategoryId(Id);

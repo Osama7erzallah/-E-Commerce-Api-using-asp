@@ -4,6 +4,7 @@ using Ecommerce.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Ecommerce.Infrastructure.Repo;
 using Ecommarce.API.Mapping_Profile;
+using Microsoft.AspNetCore.Mvc;
 namespace Ecommarce.API
 {
     public class Program
@@ -14,7 +15,20 @@ namespace Ecommarce.API
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers(options => {
+                options.CacheProfiles.Add("cache100", new CacheProfile()
+                {
+                    Duration = 100,
+                    Location = ResponseCacheLocation.Any
+                });
+                options.CacheProfiles.Add("cache60", new CacheProfile()
+                {
+                    Duration = 60,
+                    Location = ResponseCacheLocation.Any
+                });
+            }
+
+            );
 
             builder.Services.AddDbContext<AppDbContext>(options =>
             {
